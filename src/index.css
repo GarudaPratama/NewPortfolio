@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+/* Import Tailwind v4 */
+@import "tailwindcss";
+
+/* Font Hanson dari folder public */
+@font-face {
+  font-family: 'Hanson';
+  src: url('/Hanson-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/NeueHaasGrotText-65Medium-Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Warna Global (Palet 2) */
+@theme {
+  --color-bg: #FFFFFF;
+  --color-surface: #F5F5F5;
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-accent: #2563EB;
+
+  --font-hanson: 'Hanson', sans-serif;
+  --font-helvetica: 'Helvetica', sans-serif;
+}
+
