@@ -1,23 +1,10 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Lenis from "@studio-freight/lenis";
+
 
 export default function Hero() {
 
-    useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smooth: true,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
+    
   return (
     <main
       className="min-h-screen flex items-center px-6 md:px-12 lg:px-24 bg-bg overflow-hidden"
