@@ -23,6 +23,8 @@ export default function App() {
     <div>
       <Hero />
       <Projects />
+      
+      
     </div>
   );
 }
