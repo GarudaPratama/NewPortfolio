@@ -1,6 +1,7 @@
 import Hero from "./components/Hero.jsx";
 import Projects from "./components/Projects.jsx";
 import About from "./components/About.jsx";
+import Skills from "./components/Skills.jsx";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
@@ -25,6 +26,7 @@ export default function App() {
       <Hero />
       <About />
       <Projects />
+      <Skills />
     </div>
   );
 }
