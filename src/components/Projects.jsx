@@ -94,7 +94,7 @@ export default function Projects() {
             >
               <div
                 className={`w-full text-right pr-4 text-4xl md:text-6xl font-hanson font-bold transition-colors ${
-                  active === idx ? "text-black" : "text-gray-400"
+                  active === idx ? "text-black" : "text-muted"
                 }`}
               >
                 {item.title}
