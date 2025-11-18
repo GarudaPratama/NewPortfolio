@@ -94,7 +94,7 @@ export default function Skills() {
 
   return (
     <section
-      className="relative w-full bg-white pt-40 pb-40"
+      className="relative w-full bg-white pt-40 pb-40 mt-56"
       style={{ overflow: "hidden" }}
     >
       <div className="w-full flex justify-center">
