@@ -1,49 +1,18 @@
 // src/components/Skills.jsx
 import React, { useRef, useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useLang } from "../context/LanguageContext";
 
 export default function Skills() {
+  const { t } = useLang();
+
   const DESIGN_W = 1400;
   const DESIGN_H = 1400;
-
   const CARD_W = 360;
   const CARD_H = 560;
 
-  const CARDS = [
-    {
-      id: "react",
-      title: "REACT\n.JS",
-      left: 56,
-      top: 120,
-      bg: "#0b1220",
-      text: "#ffffff",
-      align: "left",
-      desc:
-        "React.js untuk membangun antarmuka modern dengan komponen cepat & modular.",
-    },
-    {
-      id: "tailwind",
-      title: "TAIL\nWIND",
-      left: 760,
-      top: 160,
-      bg: "#f5f5f5",
-      text: "#0b1220",
-      align: "right",
-      desc:
-        "Tailwind CSS untuk styling yang efisien, bersih, dan konsisten.",
-    },
-    {
-      id: "javascript",
-      title: "JAVA\nSCRIPT",
-      left: 48,
-      top: 840,
-      bg: "#f5f5f5",
-      text: "#0b1220",
-      align: "left",
-      desc:
-        "JavaScript sebagai pondasi interaksi, animasi, dan logic aplikasi web.",
-    },
-  ];
+  // translated cards
+  const CARDS = t("skills_cards") || [];
 
   const wrapRef = useRef(null);
   const [scale, setScale] = useState(1);
@@ -53,21 +22,18 @@ export default function Skills() {
     const el = wrapRef.current;
     if (!el) return;
 
-    const ro = new ResizeObserver(() => {
+    const update = () => {
       const parent = el.parentElement;
       const parentW = Math.max(350, parent.clientWidth);
       const s = parentW / DESIGN_W;
       setScale(s);
       setContainerWidth(parentW);
-    });
+    };
 
+    const ro = new ResizeObserver(update);
     ro.observe(el.parentElement);
 
-    const parent = el.parentElement;
-    const parentW = Math.max(350, parent.clientWidth);
-    setScale(parentW / DESIGN_W);
-    setContainerWidth(parentW);
-
+    update();
     return () => ro.disconnect();
   }, []);
 
@@ -97,6 +63,7 @@ export default function Skills() {
       className="relative w-full bg-white pt-40 pb-40 mt-56"
       style={{ overflow: "hidden" }}
     >
+      {/* DESKTOP */}
       <div className="w-full flex justify-center">
         <div
           ref={wrapRef}
@@ -105,14 +72,13 @@ export default function Skills() {
             height: DESIGN_H,
             transformOrigin: "top left",
             transform: `scale(${scale})`,
-            marginLeft:
-              (containerWidth - DESIGN_W * scale) / 2 / scale || 0,
+            marginLeft: (containerWidth - DESIGN_W * scale) / 2 / scale || 0,
             background: "#ffffff",
             position: "relative",
           }}
           className="hidden lg:block"
         >
-          {/* BACKGROUND — now using font-hanson */}
+          {/* BIG BACKGROUND TEXT */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -153,7 +119,7 @@ export default function Skills() {
             </div>
           </motion.div>
 
-          {/* CARDS */}
+          {/* CARDS (2×2 GRID) */}
           <div className="relative w-full h-full z-20">
             {CARDS.map((card, idx) => (
               <motion.article
@@ -207,9 +173,9 @@ export default function Skills() {
         </div>
       </div>
 
-      {/* MOBILE VERSION */}
+      {/* MOBILE */}
       <div className="lg:hidden px-6 max-w-[500px] mx-auto">
-        {/* MOBILE BACKGROUND — updated to font-hanson */}
+        {/* MOBILE BACKGROUND */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
