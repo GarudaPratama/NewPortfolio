@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 import { LanguageProvider, useLang } from "./context/LanguageContext";
@@ -7,8 +7,9 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import Opening from "./components/OpeningSplash";
 
-// Language switcher placed inside provider via AppContent
+// Language switcher
 function LanguageSwitcher() {
   const { lang, setLang } = useLang();
   const list = [
@@ -20,12 +21,11 @@ function LanguageSwitcher() {
   ];
 
   return (
-    <div style={{ position: "fixed", right: 16, top: 16, zIndex: 60 }}>
+    <div style={{ position: "fixed", right: 16, top: 16, zIndex: 999999 }}>
       <select
         value={lang}
         onChange={(e) => setLang(e.target.value)}
-        className="bg-transparent border border-muted/30 text-sm rounded px-3 py-2 font-helvetica text-text outline-none focus:ring-2 focus:ring-accent cursor-pointer"
-        aria-label="Select language"
+        className="bg-transparent border border-muted/30 text-sm rounded px-3 py-2 font-helvetica text-text outline-none focus:ring-2 focus:ring-accent cursor-pointer backdrop-blur-sm"
       >
         {list.map((l) => (
           <option key={l.code} value={l.code}>
@@ -37,7 +37,11 @@ function LanguageSwitcher() {
   );
 }
 
+// Main app content
 function AppContent() {
+  const [openingDone, setOpeningDone] = useState(false);
+
+  // smooth scrolling (Lenis)
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -46,20 +50,23 @@ function AppContent() {
     });
 
     let rafId;
-    const loop = (time) => {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(loop);
+    const raf = (t) => {
+      lenis.raf(t);
+      rafId = requestAnimationFrame(raf);
     };
-    rafId = requestAnimationFrame(loop);
+    rafId = requestAnimationFrame(raf);
 
-    return () => {
-      if (rafId) cancelAnimationFrame(rafId);
-    };
+    return () => rafId && cancelAnimationFrame(rafId);
   }, []);
 
   return (
     <>
-      <LanguageSwitcher />
+      {/* Opening animation (full screen) */}
+      {!openingDone && <Opening onFinish={() => setOpeningDone(true)} />}
+
+      {/* Only shows AFTER intro disappears */}
+      {openingDone && <LanguageSwitcher />}
+
       <Hero />
       <About />
       <Projects />

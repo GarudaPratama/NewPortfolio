@@ -1,4 +1,7 @@
-// src/components/Skills.jsx
+/* ---------------------------------------------
+   src/components/Skills.jsx
+----------------------------------------------*/
+
 import React, { useRef, useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "../context/LanguageContext";
@@ -11,8 +14,16 @@ export default function Skills() {
   const CARD_W = 360;
   const CARD_H = 560;
 
-  // translated cards
   const CARDS = t("skills_cards") || [];
+
+  const POS = [
+    { left: 80, top: 120 },
+    { left: 960, top: 120 },
+    { left: 80, top: 760 },
+    { left: 960, top: 760 },
+  ];
+
+  const cardsWithPos = CARDS.map((c, i) => ({ ...c, ...POS[i] }));
 
   const wrapRef = useRef(null);
   const [scale, setScale] = useState(1);
@@ -24,10 +35,10 @@ export default function Skills() {
 
     const update = () => {
       const parent = el.parentElement;
-      const parentW = Math.max(350, parent.clientWidth);
-      const s = parentW / DESIGN_W;
+      const w = Math.max(350, parent.clientWidth);
+      const s = w / DESIGN_W;
       setScale(s);
-      setContainerWidth(parentW);
+      setContainerWidth(w);
     };
 
     const ro = new ResizeObserver(update);
@@ -50,19 +61,17 @@ export default function Skills() {
   };
 
   const cardVariant = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 20 },
     show: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: i * 0.12 },
+      transition: { duration: 0.65, delay: i * 0.12 },
     }),
   };
 
   return (
-    <section
-      className="relative w-full bg-white pt-40 pb-40 mt-56"
-      style={{ overflow: "hidden" }}
-    >
+    <section className="relative w-full bg-white pt-40 pb-40 mt-56" style={{ overflow: "hidden" }}>
+      
       {/* DESKTOP */}
       <div className="w-full flex justify-center">
         <div
@@ -72,17 +81,17 @@ export default function Skills() {
             height: DESIGN_H,
             transformOrigin: "top left",
             transform: `scale(${scale})`,
-            marginLeft: (containerWidth - DESIGN_W * scale) / 2 / scale || 0,
-            background: "#ffffff",
+            marginLeft: (containerWidth - DESIGN_W * scale) / 2 / scale,
+            background: "#fff",
             position: "relative",
           }}
           className="hidden lg:block"
         >
-          {/* BIG BACKGROUND TEXT */}
+          {/* BG TEXT */}
           <motion.div
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.15 }}
             variants={bgVariants}
             className="absolute inset-0 pointer-events-none"
           >
@@ -119,11 +128,11 @@ export default function Skills() {
             </div>
           </motion.div>
 
-          {/* CARDS (2×2 GRID) */}
+          {/* CARDS */}
           <div className="relative w-full h-full z-20">
-            {CARDS.map((card, idx) => (
+            {cardsWithPos.map((c, idx) => (
               <motion.article
-                key={card.id}
+                key={c.id}
                 custom={idx}
                 initial="hidden"
                 whileInView="show"
@@ -131,16 +140,16 @@ export default function Skills() {
                 variants={cardVariant}
                 style={{
                   position: "absolute",
-                  left: card.left,
-                  top: card.top,
+                  left: c.left,
+                  top: c.top,
                   width: CARD_W,
                   height: CARD_H,
                   padding: 32,
                   borderRadius: 6,
                   display: "flex",
                   flexDirection: "column",
-                  background: card.bg,
-                  color: card.text,
+                  background: c.bg,
+                  color: c.text,
                   boxShadow: "0 14px 40px rgba(2,8,23,0.18)",
                 }}
               >
@@ -149,11 +158,11 @@ export default function Skills() {
                   style={{
                     fontSize: 56,
                     lineHeight: 0.95,
-                    textAlign: card.align,
+                    textAlign: c.align,
                     marginBottom: 20,
                   }}
                 >
-                  {card.title}
+                  {c.title}
                 </h3>
 
                 <p
@@ -165,7 +174,7 @@ export default function Skills() {
                     maxWidth: 260,
                   }}
                 >
-                  {card.desc}
+                  {c.desc}
                 </p>
               </motion.article>
             ))}
@@ -175,13 +184,13 @@ export default function Skills() {
 
       {/* MOBILE */}
       <div className="lg:hidden px-6 max-w-[500px] mx-auto">
-        {/* MOBILE BACKGROUND */}
+
+        {/* MOBILE BG */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
           className="absolute left-0 top-0 w-full h-[900px] -z-10 pointer-events-none"
-          style={{ overflow: "hidden" }}
         >
           <div
             style={{
@@ -216,28 +225,25 @@ export default function Skills() {
 
         {/* MOBILE CARDS */}
         <div className="relative z-20 mt-10">
-          {CARDS.map((card, idx) => (
+          {cardsWithPos.map((c, idx) => (
             <motion.div
-              key={card.id}
+              key={c.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              transition={{ duration: 0.55, delay: idx * 0.1 }}
               className="rounded-lg shadow-xl mb-10 p-6"
-              style={{ background: card.bg, color: card.text }}
+              style={{ background: c.bg, color: c.text }}
             >
               <h3
                 className="font-hanson whitespace-pre-line mb-4"
-                style={{ fontSize: 34, lineHeight: 1, textAlign: card.align }}
+                style={{ fontSize: 34, textAlign: c.align }}
               >
-                {card.title}
+                {c.title}
               </h3>
 
-              <p
-                className="font-helvetica text-muted"
-                style={{ fontSize: 18, lineHeight: 1.4 }}
-              >
-                {card.desc}
+              <p className="font-helvetica text-muted" style={{ fontSize: 18 }}>
+                {c.desc}
               </p>
             </motion.div>
           ))}
