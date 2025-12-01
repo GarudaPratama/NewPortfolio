@@ -1,6 +1,7 @@
 /* ---------------------------------------------
    src/context/translations.js
 ----------------------------------------------*/
+import LUME from "../assets/LUME.jpg";
 
 const translations = {
   en: {
@@ -22,7 +23,7 @@ const translations = {
         id: 1,
         title: "LUME",
         desc: "We create brand strategies that make your ideas clear and focused.",
-        img: "/images/strategy.jpg",
+        img: LUME,
       },
       {
         id: 2,
