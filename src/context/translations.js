@@ -1,9 +1,11 @@
 /* ---------------------------------------------
    src/context/translations.js
 ----------------------------------------------*/
+
 import LUME from "../assets/LUME.jpg";
 
 const translations = {
+  /* ============================ ENGLISH ============================ */
   en: {
     hero_title: "GARUDA",
     hero_sub:
@@ -18,6 +20,7 @@ const translations = {
 
     projects_title: "Projects",
     projects_desc: "A selection of projects I've built recently.",
+
     projects_items: [
       {
         id: 1,
@@ -81,10 +84,28 @@ const translations = {
         align: "center",
       },
     ],
+
+    /* CTA SECTION */
+    cta_big_text: "Building digital experiences with passion.",
+    button_latest_projects: "See My Latest Projects",
+
+    /* FOOTER */
+    footer: {
+      contactTitle: "CONTACT",
+      email: "EMAIL – garudapratama.mpp@gmail.com",
+      whatsapp: "WHATSAPP – 0822 7924 5886",
+
+      socialTitle: "Social Media",
+      linkedin: "LinkedIn – Garuda Pratama",
+      instagram: "Instagram – My Instagram",
+      github: "GitHub – GarudaPratama",
+
+      location: "Based in Rumpin, Bogor",
+      copyright: "All Rights Reserved",
+    },
   },
 
   /* ============================ INDONESIAN ============================ */
-
   id: {
     hero_title: "GARUDA",
     hero_sub:
@@ -99,17 +120,18 @@ const translations = {
 
     projects_title: "Projek",
     projects_desc: "Beberapa projek pilihan yang baru-baru ini saya buat.",
+
     projects_items: [
       {
         id: 1,
         title: "LUME",
         desc: "Kami membuat strategi merek yang membuat ide Anda jelas dan terfokus.",
-        img: "/images/strategy.jpg",
+        img: LUME,
       },
       {
         id: 2,
         title: "OSIS",
-        desc: "Kami merancang identitas merek kuat dengan gaya visual yang jelas.",
+        desc: "Kami merancang identitas merek yang kuat dengan gaya visual yang jelas.",
         img: "/images/identity.jpg",
       },
       {
@@ -132,7 +154,7 @@ const translations = {
       {
         id: "react",
         title: "REACT\n.JS",
-        desc: "React untuk antarmuka modern modular dan cepat.",
+        desc: "React untuk antarmuka modern, modular, dan cepat.",
         bg: "#0b1220",
         text: "#ffffff",
         align: "center",
@@ -148,7 +170,7 @@ const translations = {
       {
         id: "javascript",
         title: "JAVA\nSCRIPT",
-        desc: "JavaScript adalah dasar interaksi dan animasi.",
+        desc: "Dasar dari interaksi, animasi, dan logika.",
         bg: "#0b1220",
         text: "#ffffff",
         align: "center",
@@ -162,17 +184,35 @@ const translations = {
         align: "center",
       },
     ],
+
+    /* CTA SECTION */
+    cta_big_text: "Membangun pengalaman digital dengan penuh semangat.",
+    button_latest_projects: "Lihat Projek Terbaru Saya",
+
+    /* FOOTER */
+    footer: {
+      contactTitle: "KONTAK",
+      email: "EMAIL – garudapratama.mpp@gmail.com",
+      whatsapp: "WHATSAPP – 0822 7924 5886",
+
+      socialTitle: "Media Sosial",
+      linkedin: "LinkedIn – Garuda Pratama",
+      instagram: "Instagram – My Instagram",
+      github: "GitHub – GarudaPratama",
+
+      location: "Berdomisili di Rumpin, Bogor",
+      copyright: "Hak Cipta Dilindungi",
+    },
   },
 
   /* ============================ JAPANESE ============================ */
-
   jp: {
     hero_title: "ガルーダ",
     hero_sub:
       "ミニマリズムと洗練されたデザインを追求するフロントエンド開発者です。",
 
     about_lines: [
-      "私は Garuda、モダンなインターフェースを専門とするフロントエンド開発者です。",
+      "私はGaruda、モダンなインターフェースを専門とするフロントエンド開発者です。",
       "ミニマルな美学とスムーズなインタラクションを重視しています。",
       "シンプルに見える体験でも、細部にこだわり、",
       "意図とパフォーマンスを考慮して設計しています。",
@@ -180,12 +220,13 @@ const translations = {
 
     projects_title: "プロジェクト",
     projects_desc: "最近制作したプロジェクトの一覧です。",
+
     projects_items: [
       {
         id: 1,
         title: "LUME",
         desc: "アイデアを明確にするブランド戦略を作ります。",
-        img: "/images/strategy.jpg",
+        img: LUME,
       },
       {
         id: 2,
@@ -209,11 +250,12 @@ const translations = {
 
     skills_title: "スキル",
     skills_desc: "日常的に使用している技術とツールです。",
+
     skills_cards: [
       {
         id: "react",
         title: "REACT\n.JS",
-        desc: "高速なモダン UI を構築します。",
+        desc: "高速でモダンなUIを構築します。",
         bg: "#0b1220",
         text: "#ffffff",
         align: "center",
@@ -229,7 +271,7 @@ const translations = {
       {
         id: "javascript",
         title: "JAVA\nSCRIPT",
-        desc: "Web の基盤となる言語です。",
+        desc: "Webの基盤となる言語です。",
         bg: "#0b1220",
         text: "#ffffff",
         align: "center",
@@ -237,16 +279,34 @@ const translations = {
       {
         id: "nextjs",
         title: "NEXT\n.JS",
-        desc: "素早く実用的な React アプリを構築。",
+        desc: "高速で実践的なReactアプリを構築します。",
         bg: "#111111",
         text: "#ffffff",
         align: "center",
       },
     ],
+
+    /* CTA */
+    cta_big_text: "情熱を込めてデジタル体験を作り上げる。",
+    button_latest_projects: "最新のプロジェクトを見る",
+
+    /* FOOTER */
+    footer: {
+      contactTitle: "お問い合わせ",
+      email: "メール – garudapratama.mpp@gmail.com",
+      whatsapp: "WhatsApp – 0822 7924 5886",
+
+      socialTitle: "ソーシャルメディア",
+      linkedin: "LinkedIn – Garuda Pratama",
+      instagram: "Instagram – My Instagram",
+      github: "GitHub – GarudaPratama",
+
+      location: "インドネシア・ルンピン / ボゴール在住",
+      copyright: "全著作権所有",
+    },
   },
 
   /* ============================ SPANISH ============================ */
-
   es: {
     hero_title: "GARUDA",
     hero_sub:
@@ -261,12 +321,13 @@ const translations = {
 
     projects_title: "Proyectos",
     projects_desc: "Colección de proyectos recientes.",
+
     projects_items: [
       {
         id: 1,
         title: "LUME",
         desc: "Creamos estrategias de marca claras y enfocadas.",
-        img: "/images/strategy.jpg",
+        img: LUME,
       },
       {
         id: 2,
@@ -290,6 +351,7 @@ const translations = {
 
     skills_title: "Habilidades",
     skills_desc: "Tecnologías y herramientas que uso diariamente.",
+
     skills_cards: [
       {
         id: "react",
@@ -324,10 +386,28 @@ const translations = {
         align: "center",
       },
     ],
+
+    /* CTA */
+    cta_big_text: "Construyendo experiencias digitales con pasión.",
+    button_latest_projects: "Ver mis últimos proyectos",
+
+    /* FOOTER */
+    footer: {
+      contactTitle: "CONTACTO",
+      email: "EMAIL – garudapratama.mpp@gmail.com",
+      whatsapp: "WHATSAPP – 0822 7924 5886",
+
+      socialTitle: "Redes Sociales",
+      linkedin: "LinkedIn – Garuda Pratama",
+      instagram: "Instagram – My Instagram",
+      github: "GitHub – GarudaPratama",
+
+      location: "Con base en Rumpin, Bogor",
+      copyright: "Todos los derechos reservados",
+    },
   },
 
   /* ============================ ARABIC ============================ */
-
   ar: {
     hero_title: "غارودا",
     hero_sub: "مطور واجهات أمامية شغوف بالبساطة والتصميم الأنيق.",
@@ -341,12 +421,13 @@ const translations = {
 
     projects_title: "المشاريع",
     projects_desc: "مجموعة من المشاريع التي أنشأتها مؤخراً.",
+
     projects_items: [
       {
         id: 1,
         title: "LUME",
         desc: "ننشئ استراتيجيات علامة تجارية واضحة.",
-        img: "/images/strategy.jpg",
+        img: LUME,
       },
       {
         id: 2,
@@ -370,6 +451,7 @@ const translations = {
 
     skills_title: "المهارات",
     skills_desc: "التقنيات والأدوات التي أستخدمها يومياً.",
+
     skills_cards: [
       {
         id: "react",
@@ -404,6 +486,25 @@ const translations = {
         align: "center",
       },
     ],
+
+    /* CTA */
+    cta_big_text: "نصنع تجارب رقمية بشغف.",
+    button_latest_projects: "عرض أحدث مشاريعي",
+
+    /* FOOTER */
+    footer: {
+      contactTitle: "تواصل",
+      email: "البريد – garudapratama.mpp@gmail.com",
+      whatsapp: "واتساب – 0822 7924 5886",
+
+      socialTitle: "وسائل التواصل",
+      linkedin: "LinkedIn – Garuda Pratama",
+      instagram: "Instagram – My Instagram",
+      github: "GitHub – GarudaPratama",
+
+      location: "مقيم في رومبين، بوجور",
+      copyright: "جميع الحقوق محفوظة",
+    },
   },
 };
 
