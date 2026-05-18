@@ -76,9 +76,9 @@ const translations = {
         align: "center",
       },
       {
-        id: "nextjs",
-        title: "NEXT\n.JS",
-        desc: "Full-stack React framework for fast production apps.",
+        id: "Github",
+        title: "Git\nHub",
+        desc: "GitHub for version control and collaboration.",
         bg: "#111111",
         text: "#ffffff",
         align: "center",
