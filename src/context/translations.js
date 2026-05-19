@@ -331,13 +331,13 @@ const translations = {
       },
       {
         id: 2,
-        title: "OSIS",
+        title: "Adz-Quran",
         desc: "Diseñamos identidades visuales fuertes.",
         img: "/images/identity.jpg",
       },
       {
         id: 3,
-        title: "XB",
+        title: "Aplicación de clima",
         desc: "Experiencias digitales hermosas y sencillas.",
         img: "/images/experience.jpg",
       },
