@@ -25,19 +25,19 @@ const translations = {
       {
         id: 1,
         title: "LUME",
-        desc: "We create brand strategies that make your ideas clear and focused.",
+        desc: "Build your outfit with AI powered outfit picker.",
         img: LUME,
       },
       {
         id: 2,
-        title: "OSIS",
-        desc: "We design strong brand identities with clear visual style.",
+        title: "Adz-Quran",
+        desc: "Recite the Quran with ease.",
         img: "/images/identity.jpg",
       },
       {
         id: 3,
-        title: "XB",
-        desc: "We build beautiful and easy-to-use digital experiences.",
+        title: "Weather App",
+        desc: "Weather App in your pocket, simple and clean.",
         img: "/images/experience.jpg",
       },
       {
@@ -130,13 +130,13 @@ const translations = {
       },
       {
         id: 2,
-        title: "OSIS",
+        title: "Adz-Quran",
         desc: "Kami merancang identitas merek yang kuat dengan gaya visual yang jelas.",
         img: "/images/identity.jpg",
       },
       {
         id: 3,
-        title: "XB",
+        title: "Aplikasi Cuaca",
         desc: "Kami membangun pengalaman digital yang indah dan mudah digunakan.",
         img: "/images/experience.jpg",
       },
@@ -176,8 +176,8 @@ const translations = {
         align: "center",
       },
       {
-        id: "nextjs",
-        title: "NEXT\n.JS",
+        id: "Github",
+        title: "Git\nHub",
         desc: "Framework React cepat untuk aplikasi produksi.",
         bg: "#111111",
         text: "#ffffff",
@@ -192,7 +192,7 @@ const translations = {
     /* FOOTER */
     footer: {
       contactTitle: "KONTAK",
-      email: "EMAIL – garudapratama.mpp@gmail.com",
+      email: "EMAIL – garudapratama.mgp@gmail.com",
       whatsapp: "WHATSAPP – 0822 7924 5886",
 
       socialTitle: "Media Sosial",
@@ -230,13 +230,13 @@ const translations = {
       },
       {
         id: 2,
-        title: "OSIS",
+        title: "Adz-Quran",
         desc: "明確なスタイルで強いブランドを設計します。",
         img: "/images/identity.jpg",
       },
       {
         id: 3,
-        title: "XB",
+        title: "天気予報アプリ",
         desc: "美しく使いやすいデジタル体験を構築します。",
         img: "/images/experience.jpg",
       },
